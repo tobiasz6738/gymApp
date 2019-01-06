@@ -11,7 +11,5 @@ public class SpringTobiApplication {
         SpringApplication.run(SpringTobiApplication.class, args);
     }
 
-
-
 }
 
