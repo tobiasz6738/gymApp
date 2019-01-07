@@ -1,34 +1,40 @@
 package com.example.springtobi.bean;
 
+import com.example.springtobi.bean.userPackage.PersonalData;
+import com.example.springtobi.bean.userPackage.SecurityData;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 
-    private String imie;
-    private String nazwisko;
-    private int wiek;
+    private List<PersonalData> personalData;
 
 
 
-    public String getImie() {
-        return imie;
+    private SecurityData securityData;
+
+    public User()
+    {
+
+        this.personalData = new ArrayList<>();
+        this.securityData = new SecurityData();
+
     }
 
-    public void setImie(String imie) {
-        this.imie = imie;
+    public SecurityData getSecurityData() {
+        return securityData;
     }
 
-    public String getNazwisko() {
-        return nazwisko;
+    public void setSecurityData(SecurityData securityData) {
+        this.securityData = securityData;
     }
 
-    public void setNazwisko(String nazwisko) {
-        this.nazwisko = nazwisko;
+    public List<PersonalData> getPersonalData() {
+        return personalData;
     }
 
-    public int getWiek() {
-        return wiek;
-    }
-
-    public void setWiek(int wiek) {
-        this.wiek = wiek;
+    public void setPersonalData(List<PersonalData> personalData) {
+        this.personalData = personalData;
     }
 }
