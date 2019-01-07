@@ -8,8 +8,6 @@ public class User {
 
 
 
-
-
     public String getImie() {
         return imie;
     }

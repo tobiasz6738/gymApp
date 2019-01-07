@@ -13,7 +13,6 @@ public class MainControllerTobi {
     // [tobiasz][rejestrwowanie] create view for rejestrowanie
 
     @GetMapping("/")
-
     public String index() {
         return "gym/welcomeTobi";
     }
