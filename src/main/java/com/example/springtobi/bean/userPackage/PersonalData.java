@@ -1,5 +1,8 @@
 package com.example.springtobi.bean.userPackage;
-
+ /*
+ in hear We need Constructor because sometimes
+ We need use force by someone give us accurate information
+  */
 public class PersonalData {
 
     private String name;
@@ -10,6 +13,7 @@ public class PersonalData {
     {
 
     }
+
     public PersonalData(String name,String surname,int age)
     {
 

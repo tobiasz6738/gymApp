@@ -1,5 +1,10 @@
 package com.example.springtobi.bean.userPackage;
 
+
+/*
+in hear We don't need Constructor because ??
+ */
+
 public class SecurityData {
 
         private String login;
