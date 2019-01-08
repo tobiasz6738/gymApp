@@ -41,29 +41,27 @@ public class RegisterController {
         String passwordForCheck = userForRegister.getSecurityData().getPassword();
 
 
-        if(allUser.isEmpty()) {
-            this.dataBase.getUsersList().add(userForRegister);
-
-
-            for (User user : allUser)
+        if (allUser.isEmpty())
             {
+                this.dataBase.getUsersList().add(userForRegister);
+                return "gym/welcomeTobi";
+           }
+            else{
 
-                if (user.getSecurityData().getLogin().equals(logInForCheck) &&
-                        user.getSecurityData().getPassword().equals(passwordForCheck)) {
+                for (User user : allUser) {
+                    if (user.getSecurityData().getLogin().equals(logInForCheck) &&
+                            user.getSecurityData().getPassword().equals(passwordForCheck))
+                        return "gym/registerTobi/good";
 
-
-                    return "gym/welcomeTobi";
                 }
-                else
-                {
-                    this.dataBase.getUsersList().add(userForRegister);
-                }
+            this.dataBase.getUsersList().add(userForRegister);
             }
-
+          return "gym/welcomeTobi";
         }
-        return "gym/registerTobi/test";
     }
 
-}
+
+
+
 
 
