@@ -16,11 +16,9 @@ public class PersonalData {
 
     public PersonalData(String name,String surname,int age)
     {
-
         this.name = name;
         this.surname = surname;
         this.age = age;
-
     }
 
 

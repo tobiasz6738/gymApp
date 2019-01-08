@@ -9,17 +9,13 @@ import java.util.List;
 public class User {
 
     private List<PersonalData> personalData;
-
-
-
     private SecurityData securityData;
+
 
     public User()
     {
-
         this.personalData = new ArrayList<>();
         this.securityData = new SecurityData();
-
     }
 
     public SecurityData getSecurityData() {
