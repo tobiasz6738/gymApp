@@ -34,24 +34,35 @@ public class RegisterController {
     public String registerNewUserPost(@ModelAttribute() User userForRegister) {
         //TODO: check if userForRegister is already in dataBase;
 
-        this.dataBase.getUsersList().add(userForRegister);
 
         List<User> allUser = this.dataBase.getUsersList();
 
         String logInForCheck = userForRegister.getSecurityData().getLogin();
         String passwordForCheck = userForRegister.getSecurityData().getPassword();
 
-        if(allUser.equals(logInForCheck) && allUser.equals(passwordForCheck))
-        {
-            return "gym/registerTobi/test";
-        }
-        else
-        {
-            return "gym/welcomeTobi";
-        }
 
+        if(allUser.isEmpty()) {
+            this.dataBase.getUsersList().add(userForRegister);
+
+
+            for (User user : allUser)
+            {
+
+                if (user.getSecurityData().getLogin().equals(logInForCheck) &&
+                        user.getSecurityData().getPassword().equals(passwordForCheck)) {
+
+
+                    return "gym/welcomeTobi";
+                }
+                else
+                {
+                    this.dataBase.getUsersList().add(userForRegister);
+                }
+            }
+
+        }
+        return "gym/registerTobi/test";
     }
-
 
 }
 
