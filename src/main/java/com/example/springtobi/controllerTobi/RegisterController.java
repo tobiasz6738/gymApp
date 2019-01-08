@@ -34,6 +34,7 @@ public class RegisterController {
     public String registerNewUserPost(@ModelAttribute() User userForRegister) {
         //TODO: check if userForRegister is already in dataBase;
 
+        this.dataBase.getUsersList().add(userForRegister);
 
         List<User> allUser = this.dataBase.getUsersList();
 
