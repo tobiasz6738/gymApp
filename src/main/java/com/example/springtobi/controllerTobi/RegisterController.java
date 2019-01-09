@@ -31,34 +31,37 @@ public class RegisterController {
     }
 
     @PostMapping("/rejestracja")
-    public String registerNewUserPost(@ModelAttribute() User userForRegister) {
+    public String registerNewUserPost(@ModelAttribute() User userForRegister)
+    {
         //TODO: check if userForRegister is already in dataBase;
-
 
         List<User> allUser = this.dataBase.getUsersList();
 
         String logInForCheck = userForRegister.getSecurityData().getLogin();
         String passwordForCheck = userForRegister.getSecurityData().getPassword();
 
-
         if (allUser.isEmpty())
-            {
-                this.dataBase.getUsersList().add(userForRegister);
-                return "gym/welcomeTobi";
-           }
-            else{
-
-                for (User user : allUser) {
-                    if (user.getSecurityData().getLogin().equals(logInForCheck) &&
-                            user.getSecurityData().getPassword().equals(passwordForCheck))
-                        return "gym/registerTobi/good";
-
-                }
+        {
             this.dataBase.getUsersList().add(userForRegister);
-            }
-          return "gym/welcomeTobi";
+            return "gym/welcomeTobi";
         }
+        else
+        {
+            for (User user : allUser)
+            {
+                if (user.getSecurityData().getLogin().equals(logInForCheck) &&
+                 user.getSecurityData().getPassword().equals(passwordForCheck))
+                {
+                    return "gym/registerTobi/doubleLogin";
+                }
+            }
+
+            this.dataBase.getUsersList().add(userForRegister);
+            return "gym/welcomeTobi";
+        }
+
     }
+}
 
 
 
