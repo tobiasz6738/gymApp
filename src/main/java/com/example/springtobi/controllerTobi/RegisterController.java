@@ -35,11 +35,11 @@ public class RegisterController {
     {
 
 
-//        String url = this.registrationHelper.getUrlAndAddUserToDataBase(dataBase, userForRegister);
-//
-//        return url;
+        String url = this.registrationHelper.getUrlAndAddUserToDataBase(dataBase, userForRegister);
+
+        return url;
 //           ==
-          return this.registrationHelper.getUrlAndAddUserToDataBase(dataBase, userForRegister);
+//          return this.registrationHelper.getUrlAndAddUserToDataBase(dataBase, userForRegister);
     }
 }
 
