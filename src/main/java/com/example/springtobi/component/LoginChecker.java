@@ -4,29 +4,15 @@ import org.springframework.stereotype.Component;
 
 
 @Component
+public class LoginChecker
+{
 
-public class LoginChecker {
 
-
-
-    public boolean CheckLogin(String login)
+    public boolean checkLogin(String login)
     {
 
-        int dlugloscTegoStringa_czyliLoginu = login.length();
+        return login.length() > 3 && login.length() <= 10;
 
-        if(dlugloscTegoStringa_czyliLoginu <= 3)
-        {
-            return false;
-        }
-        else
-        {
-            if(dlugloscTegoStringa_czyliLoginu > 10)
-            {
-                return false;
-            }
-        }
-
-        return true;
     }
 
 }

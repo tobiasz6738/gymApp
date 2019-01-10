@@ -7,40 +7,48 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class RegistrationHelper {
+public class RegistrationHelper
+{
 
     @Autowired
     private LoginChecker loginChecker;
 
-    public String getUrlAndAddUserToDataBase(DataBase dataBase, User userForRegister)
+    public String getUrlAndAddUserToDataBase(List<User> allUser, User userForRegister)
     {
-        List<User> allUser = dataBase.getUsersList();
-
-        String logInForCheck = userForRegister.getSecurityData().getLogin();
-        String passwordForCheck = userForRegister.getSecurityData().getPassword();
-
-        boolean b = this.loginChecker.CheckLogin(logInForCheck);
-
-
-
-        if(b == true) {
-            if (allUser.isEmpty()) {
-                dataBase.getUsersList().add(userForRegister);
+        if (this.loginChecker.checkLogin(getLogin(userForRegister)))
+        {
+            if (allUser.isEmpty())
+            {
+//                dataBase.getUsersList().add(userForRegister);
+                allUser.add(userForRegister);
                 return "gym/welcomeTobi";
             } else
 
-                for (User user : allUser) {
-                    if (user.getSecurityData().getLogin().equals(logInForCheck) &&
-                            user.getSecurityData().getPassword().equals(passwordForCheck)) {
+                for (User user : allUser)
+                {
+                    if (getLogin(user).equals(getLogin(userForRegister)) &&
+                            getPassword(user).equals(getPassword(userForRegister)))
+                    {
                         return "gym/registerTobi/doubleLogin";
                     }
                 }
 
-            dataBase.getUsersList().add(userForRegister);
+//            dataBase.getUsersList().add(userForRegister);
+            allUser.add(userForRegister);
             return "gym/welcomeTobi";
-        }else
+        } else
         {
             return "gym/registerTobi/loginChecker";
         }
+    }
+
+    private String getPassword(User user)
+    {
+        return user.getSecurityData().getPassword();
+    }
+
+    private String getLogin(User user)
+    {
+        return user.getSecurityData().getLogin();
     }
 }

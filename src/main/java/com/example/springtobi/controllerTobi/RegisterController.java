@@ -35,7 +35,7 @@ public class RegisterController {
     {
 
 
-        String url = this.registrationHelper.getUrlAndAddUserToDataBase(dataBase, userForRegister);
+        String url = this.registrationHelper.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
 
         return url;
 //           ==
