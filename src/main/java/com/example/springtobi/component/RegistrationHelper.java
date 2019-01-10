@@ -19,26 +19,32 @@ public class RegistrationHelper
         {
             if (allUser.isEmpty())
             {
-//                dataBase.getUsersList().add(userForRegister);
                 allUser.add(userForRegister);
-                return "gym/welcomeTobi";
-            } else
 
+                return "gym/welcomeTobi";
+
+            } else
+            {
                 for (User user : allUser)
                 {
                     if (getLogin(user).equals(getLogin(userForRegister)) &&
                             getPassword(user).equals(getPassword(userForRegister)))
                     {
+
                         return "gym/registerTobi/doubleLogin";
+
                     }
                 }
-
-//            dataBase.getUsersList().add(userForRegister);
+            }
             allUser.add(userForRegister);
+
             return "gym/welcomeTobi";
+
         } else
         {
+
             return "gym/registerTobi/loginChecker";
+
         }
     }
 
