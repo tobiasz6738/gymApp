@@ -13,9 +13,14 @@ public class RegistrationHelper
     @Autowired
     private LoginChecker loginChecker;
 
+    @Autowired
+    private PasswordChecker passwordChecker;
+
     public String getUrlAndAddUserToDataBase(List<User> allUser, User userForRegister)
     {
-        if (this.loginChecker.checkLogin(getLogin(userForRegister)))
+
+
+        if (this.loginChecker.checkLogin(getLogin(userForRegister)) && this.passwordChecker.checkPassword(getPassword(userForRegister)) )
         {
             if (allUser.isEmpty())
             {
@@ -46,7 +51,11 @@ public class RegistrationHelper
             return "gym/registerTobi/loginChecker";
 
         }
+
+
     }
+
+
 
     private String getPassword(User user)
     {
