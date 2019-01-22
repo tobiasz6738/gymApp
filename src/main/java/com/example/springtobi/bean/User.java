@@ -1,36 +1,41 @@
 package com.example.springtobi.bean;
 
-import com.example.springtobi.bean.userPackage.PersonalData;
-import com.example.springtobi.bean.userPackage.SecurityData;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class User {
 
-    private List<PersonalData> personalData;
-    private SecurityData securityData;
+    private String login;
+    private String password;
 
 
     public User()
     {
-        this.personalData = new ArrayList<>();
-        this.securityData = new SecurityData();
+
     }
 
-    public SecurityData getSecurityData() {
-        return securityData;
+    public User(String login, String password)
+    {
+        this.login = login;
+        this.password = password;
+
+
     }
 
-    public void setSecurityData(SecurityData securityData) {
-        this.securityData = securityData;
+    public String getLogin()
+    {
+        return login;
     }
 
-    public List<PersonalData> getPersonalData() {
-        return personalData;
+    public void setLogin(String login)
+    {
+        this.login = login;
     }
 
-    public void setPersonalData(List<PersonalData> personalData) {
-        this.personalData = personalData;
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
     }
 }
