@@ -58,11 +58,11 @@ public class RegistrationHelper
 
     private String getPassword(User user)
     {
-        return user.getSecurityData().getPassword();
+        return user.getPassword();
     }
 
     private String getLogin(User user)
     {
-        return user.getSecurityData().getLogin();
+        return user.getLogin();
     }
 }
