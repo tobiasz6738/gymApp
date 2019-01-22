@@ -19,7 +19,21 @@ public class LoginCheckerTest
     }
 
     @Test
-    public void shouldReturnTrueBecauseLoginIsCorrect()
+    public void test()
+    {
+        // given
+        String incerrectLogin = "ab";
+
+        // when
+        boolean result = underTest.checkLogin(incerrectLogin);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(false);
+
+    }
+
+    @Test
+    public void shouldReturnedTrueBecauseLoginIsCorrect()
     {
         // given
         String login = "pawel";

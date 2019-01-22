@@ -1,77 +1,100 @@
 package com.example.springtobi.component;
 
-import org.assertj.core.api.Assertions;
+
+import org.fest.assertions.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PasswordCheckerTest
 {
 
-    private PasswordChecker underTest2;
+    private PasswordChecker underTest;
+
 
     @Before
     public void setUp()
     {
-        this.underTest2 = new PasswordChecker();
+        this.underTest = new PasswordChecker();
     }
 
-        @Test
-        public void shouldReturnTrueBecausePasswordIsCorrect()
-        {
-//             given
-            String password = "al9a";
+    @Test
+    public void shouldReturnedTrueBecausePasswordIsCorrect()
+    {
+        String correctPassword = "al9a";
 
-//             when
-            boolean result = underTest2.checkPassword(password);
+        boolean methodsCheckerPasswordCheckPasswordIsTrueOrFalse = underTest.checkPassword(correctPassword);
 
-//             then
-            Assertions.assertThat(result).isEqualTo(true);
+        Assertions.assertThat(methodsCheckerPasswordCheckPasswordIsTrueOrFalse).isEqualTo(true);
+    }
 
-        }
+    @Test
+    public void shouldReturnedFalseBecausePasswordIsToShort()
+    {
 
-        @Test
-        public void shouldReturnFalseBecausePasswordIsTooShort()
-        {
-            // given
-            String password = "123";
+    //2.given
 
-            // when
-            boolean result = underTest2.checkPassword(password);
+        String incorrectPassword = "1";
 
-            // then
-            Assertions.assertThat(result).isEqualTo(false);
+    //1.when  (jesli)
 
-        }
+        boolean methodsCheckerPasswordCheckPasswordIsTrueOrFalse = underTest.checkPassword(incorrectPassword);
 
-        @Test
-        public void shouldReturnFalseBecausePasswordIsTooShort2()
-        {
-            // given
-            String password = "a0";
+        //3.then  (po czym)
 
-            // when
-            boolean result = underTest2.checkPassword(password);
-
-            // then
-            Assertions.assertThat(result).isEqualTo(false);
-
-        }
-
-        @Test
-        public void shouldReturnFalseBecausePasswordIsTooLong()
-        {
-            // given
-            String password = "7777777";
-
-            // when
-            boolean result = underTest2.checkPassword(password);
-
-            // then
-            Assertions.assertThat(result).isEqualTo(false);
-
-        }
-
-
+        Assertions.assertThat(methodsCheckerPasswordCheckPasswordIsTrueOrFalse).isEqualTo(false);
     }
 
 
+    @Test
+    public void shouldReturnedFalseBecausePasswordIsToLong()
+    {
+
+        //given
+
+        String inCorrectPassword = "aflasjfaslkfjalkjf";
+
+        //then
+        boolean methodsCheckerPasswordCheckPasswordIsTrueOrFalse = underTest.checkPassword(inCorrectPassword);
+
+        //when
+
+        Assertions.assertThat(methodsCheckerPasswordCheckPasswordIsTrueOrFalse).isEqualTo(false);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
