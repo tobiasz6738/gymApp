@@ -17,6 +17,7 @@ public class RegisterController {
 
     @Autowired
     private DataBase dataBase;
+
     @Autowired
     private RegistrationHelper registrationHelper;
 
@@ -41,6 +42,11 @@ public class RegisterController {
 //           ==
 //          return this.registrationHelper.getUrlAndAddUserToDataBase(dataBase, userForRegister);
     }
+
+
+
+
+
 }
 
 
