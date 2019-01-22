@@ -46,9 +46,7 @@ public class RegistrationHelper
 
         } else
         {
-
             return "gym/registerTobi/loginChecker";
-
         }
 
 

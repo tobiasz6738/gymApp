@@ -4,7 +4,6 @@ import com.example.springtobi.bean.User;
 import com.example.springtobi.component.DataBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
@@ -15,14 +14,22 @@ public class AddDefaultUserController
     @Autowired
     private DataBase dataBase;
 
+    private boolean trueFalse = true;
+
 
     @GetMapping("/completedDataBaseNewUsers")
     public String addDefaultUsers()
     {
 
-        List<User> usersList = this.dataBase.getUsersList();
+        if(trueFalse)
+        {
+                List<User> usersList = this.dataBase.getUsersList();
 
-        usersList.add(new User("Tobiasz","al9p"));
+                usersList.add(new User("Tobiasz", "al9p"));
+
+
+            trueFalse = false;
+        }
 
         return "gym/welcomeTobi";
     }

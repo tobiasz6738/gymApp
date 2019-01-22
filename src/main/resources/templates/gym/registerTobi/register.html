@@ -20,11 +20,11 @@
                 <form th:action="@{/rejestracja}" th:object="${userForRegister}" method="post">
                     <div class="form-group">
                         <label for = "usr" >Login:</label>
-                        <input type="text" class="form-control" id="usr" th:field="*{securityData.login}">
+                        <input type="text" class="form-control" id="usr" th:field="*{login}">
                     </div>
                     <div class="form-group">
                         <label for = "usr2">Password:</label>
-                        <input type="password" class="form-control" id="usr2" th:field="*{securityData.password}">
+                        <input type="password" class="form-control" id="usr2" th:field="*{password}">
                     </div>
                     <p><input type="submit" value="Submit" class="btn btn-default"/></p>
                     <!--<p><input type="submit" value="Submit" class="btn btn-default"/></p>-->
