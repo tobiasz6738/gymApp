@@ -2,14 +2,18 @@ package com.example.springtobi.component;
 
 import com.example.springtobi.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-public class AddDefaultUserControler
+
+@Component
+public class AddDefaultUser
 {
 
     @Autowired
     private DataBase dataBase;
+
     private boolean trueFalse;
 
 
