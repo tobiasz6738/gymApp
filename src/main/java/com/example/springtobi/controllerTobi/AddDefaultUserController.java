@@ -23,7 +23,8 @@ public class AddDefaultUserController
     @GetMapping("/completedDataBaseNewUsers")
     public String addDefaultUsers()
     {
-        return this.addDefaultUser.addDefaultUsers(this.dataBase.getUsersList()) ;
+        this.addDefaultUser.addDefaultUsers(this.dataBase.getUsersList()) ;
+        return "gym/welcomeTobi";
     }
 
 }

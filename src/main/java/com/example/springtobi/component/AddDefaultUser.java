@@ -14,7 +14,7 @@ public class AddDefaultUser
 
     private boolean trueFalse;
 
-    public String addDefaultUsers(List<User> listUsers)
+    public void addDefaultUsers(List<User> listUsers)
     {
 
         if(!trueFalse)
@@ -26,6 +26,6 @@ public class AddDefaultUser
 
             trueFalse = true;
         }
-        return "gym/welcomeTobi";
+
     }
 }
