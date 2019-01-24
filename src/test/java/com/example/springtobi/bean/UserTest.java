@@ -4,8 +4,6 @@ import org.fest.assertions.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class UserTest
 {
 
@@ -19,20 +17,33 @@ public class UserTest
     }
 
     @Test
-    public void test()
+    public void shouldReturnFalseBaceuseIncorrectLogAndPass()
     {
-        //given
-       String login = "admin";
-        //then
-        boolean result = underTest.isAdult(login);
+ //      given
+        underTest.setLogin("dupa");
+        underTest.setPassword("dupa2");
 
-        //when
-        Assertions.assertThat(result).isEqualTo(true);
+ //      then
+        boolean result = underTest.isAdmin();
+
+ //      when
+        Assertions.assertThat(result).isEqualTo(false);
     }
 
     @Test
     public void test2()
     {
+        //      given
+        underTest.setLogin("admin");
+//        underTest.setPassword("admin");
+
+        //      then
+        boolean result = underTest.isAdmin();
+
+        //      when
+        Assertions.assertThat(result).isEqualTo(true);
+
+
     }
 
 

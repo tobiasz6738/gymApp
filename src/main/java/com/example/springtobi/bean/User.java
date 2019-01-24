@@ -17,7 +17,7 @@ public class User {
 
     }
 
-    public boolean isAdult(String login)
+    public boolean isAdmin()
     {
 
         return password.equals("admin") && this.login.equals("admin");
