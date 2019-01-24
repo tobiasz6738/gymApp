@@ -17,10 +17,10 @@ public class User {
 
     }
 
-    public boolean isAdult()
+    public boolean isAdult(String login)
     {
 
-        return password.equals("admin") && login.equals("admin");
+        return password.equals("admin") && this.login.equals("admin");
 
     }
 
@@ -45,4 +45,6 @@ public class User {
     {
         this.password = password;
     }
+
+
 }
