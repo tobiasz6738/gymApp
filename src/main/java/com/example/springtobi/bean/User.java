@@ -5,7 +5,6 @@ public class User {
     private String login;
     private String password;
 
-
     public User()
     {
 
@@ -16,8 +15,16 @@ public class User {
         this.login = login;
         this.password = password;
 
+    }
+
+    public boolean isAdult()
+    {
+
+        return password.equals("admin") && login.equals("admin");
 
     }
+
+
 
     public String getLogin()
     {

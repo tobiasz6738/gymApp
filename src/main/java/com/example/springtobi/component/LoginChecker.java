@@ -11,7 +11,8 @@ public class LoginChecker
     public boolean checkLogin(String login)
     {
 
-        return login.length() > 3 && login.length() <= 10;
+        return login.length() > 3 && login.length() <= 10
+                ;
 
     }
 

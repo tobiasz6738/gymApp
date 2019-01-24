@@ -80,4 +80,5 @@ public class AddDefaultUserTest
         //then
         Assertions.assertThat(userList.get(0).getPassword().length()).isEqualTo(4);
     }
+
 }
