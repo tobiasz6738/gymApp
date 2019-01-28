@@ -19,23 +19,36 @@ public class LogInController
 
 
     @GetMapping("/logowanie")
-    //TODO: change method's name
     public String registerNewUserGet(Model model)
     {
         model.addAttribute("userForLogin", new User());
 
         return "gym/registerTobi/logIn";
-
     }
+
+    //TODO: 1) commit previous work 2) extract login logic to some Component 3) write UnitTest on this Component
 
     @PostMapping("/logowanie")
-    public String checkIsUserInOrOut()
+    public String checkIsUserInOrOut(User userForCheck)
     {
 
-        return "gym/registerTobi/test";
+        List<User> usersList = this.dataBase.getUsersList();
+
+        String login = userForCheck.getLogin();
+        String password = userForCheck.getPassword();
+
+
+        for (User user : usersList)
+        {
+            if(user.getLogin().equals(login) && user.getPassword().equals(password))
+            {
+                return "gym/registerTobi/test";
+            }
+
+        }
+
+        return "gym/registerTobi/test2";
     }
-
-
 
 }
 

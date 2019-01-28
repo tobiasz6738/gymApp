@@ -19,8 +19,7 @@ public class AddDefaultUser
 
         if(!trueFalse)
         {
-
-            User user = new User("tobiasz", "al9p");
+            User user = new User("tobiasz", "aq12");
 
             listUsers.add(user);
 
@@ -28,4 +27,5 @@ public class AddDefaultUser
         }
 
     }
+
 }
