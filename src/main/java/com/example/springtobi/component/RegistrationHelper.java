@@ -19,7 +19,7 @@ public class RegistrationHelper
     public String getUrlAndAddUserToDataBase(List<User> allUser, User userForRegister)
     {
 
-        if (this.loginChecker.checkLogin(getLogin(userForRegister)) && this.passwordChecker.checkPassword(getPassword(userForRegister)) )
+        if (this.loginChecker.checkLogin(getLogin(userForRegister)) && this.passwordChecker.checkPassword(getPassword(userForRegister)))
         {
             if (allUser.isEmpty())
             {
@@ -51,7 +51,6 @@ public class RegistrationHelper
 
 
     }
-
 
 
     private String getPassword(User user)

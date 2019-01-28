@@ -24,4 +24,5 @@ public class DataBase {
     public void setUsersList(List<User> usersList) {
         this.usersList = usersList;
     }
+
 }

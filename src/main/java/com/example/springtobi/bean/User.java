@@ -1,6 +1,7 @@
 package com.example.springtobi.bean;
 
-public class User {
+public class User
+{
 
     private String login;
     private String password;
@@ -23,7 +24,6 @@ public class User {
         return password.equals("admin") && this.login.equals("admin");
 
     }
-
 
 
     public String getLogin()
