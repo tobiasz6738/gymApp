@@ -8,17 +8,15 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class AddDefaultUserTest
 {
 
-    private AddDefaultUser test;
+    private AddDefaultUser underTest;
 
     @Before
     public void setUp()
     {
-        this.test = new AddDefaultUser();
+        this.underTest = new AddDefaultUser();
     }
 
     @Test
@@ -29,7 +27,7 @@ public class AddDefaultUserTest
         List<User> userList = new ArrayList<>();
 
         //when
-        this.test.addDefaultUsers(userList);
+        this.underTest.addDefaultUsers(userList);
 
         //then
 
@@ -45,7 +43,7 @@ public class AddDefaultUserTest
         List<User> userList = new ArrayList<>();
 
         //when
-        this.test.addDefaultUsers(userList);
+        this.underTest.addDefaultUsers(userList);
 
         //then
 
@@ -61,7 +59,7 @@ public class AddDefaultUserTest
         List<User> userList = new ArrayList<>();
 
         //when
-        this.test.addDefaultUsers(userList);
+        this.underTest.addDefaultUsers(userList);
 
         //then
         Assertions.assertThat(userList.get(0).getPassword()).isEqualTo("al9p");
@@ -75,7 +73,7 @@ public class AddDefaultUserTest
         List<User> userList = new ArrayList<>();
 
         //when
-        this.test.addDefaultUsers(userList);
+        this.underTest.addDefaultUsers(userList);
 
         //then
         Assertions.assertThat(userList.get(0).getPassword().length()).isEqualTo(4);

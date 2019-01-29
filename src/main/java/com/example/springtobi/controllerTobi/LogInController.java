@@ -19,7 +19,7 @@ public class LogInController
     @Autowired
     private LoginHelper loginHelper;
 
-    @GetMapping("/logowanie")
+    @GetMapping("/logIn")
     public String registerNewUserGet(Model model)
     {
         model.addAttribute("userForLogin", new User());
@@ -29,11 +29,11 @@ public class LogInController
 
     //TODO: 1) commit previous work 2) extract login logic to some Component 3) write UnitTest on this Component
 
-    @PostMapping("/logowanie")
+    @PostMapping("/logIn")
     public String checkIsUserInOrOut(User userForLogin)
     {
 
-        String urlw = this.loginHelper.checkLogInAndPasswordIsRegister(dataBase.getUsersList(),userForLogin);
+        String urlw = this.loginHelper.checkLogInAndPasswordIsRegister(dataBase.getUsersList(), userForLogin);
 
         return urlw;
     }

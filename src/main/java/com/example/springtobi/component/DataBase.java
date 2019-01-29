@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class DataBase {
+public class DataBase
+{
 
     private List<User> usersList;
 
@@ -17,11 +18,13 @@ public class DataBase {
     }
 
 
-    public List<User> getUsersList() {
+    public List<User> getUsersList()
+    {
         return usersList;
     }
 
-    public void setUsersList(List<User> usersList) {
+    public void setUsersList(List<User> usersList)
+    {
         this.usersList = usersList;
     }
 

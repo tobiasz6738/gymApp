@@ -12,12 +12,12 @@
     <div class="col-md-4">
         <div class="login-panel panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Logowanie</h3>
+                <h3 class="panel-title">LogIn</h3>
 
 
             </div>
             <div class="panel-body">
-                <form th:action="@{/logowanie}" th:object="${userForLogin}" method="post">
+                <form th:action="@{/logIn}" th:object="${userForLogin}" method="post">
                     <div class="form-group">
                         <label for = "usr" >Login:</label>
                         <input type="text" class="form-control" id="usr" th:field="*{login}">

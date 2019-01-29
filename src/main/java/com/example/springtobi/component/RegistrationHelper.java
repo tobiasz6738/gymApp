@@ -49,9 +49,7 @@ public class RegistrationHelper
             return "gym/registerTobi/loginChecker";
         }
 
-
     }
-
 
     private String getPassword(User user)
     {

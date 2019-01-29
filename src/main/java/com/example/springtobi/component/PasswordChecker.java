@@ -2,8 +2,6 @@ package com.example.springtobi.component;
 
 import org.springframework.stereotype.Component;
 
-import java.util.stream.IntStream;
-
 @Component
 public class PasswordChecker
 {
@@ -18,7 +16,6 @@ public class PasswordChecker
         return checkCorrectLenght;
 
     }
-
 
 }
 
