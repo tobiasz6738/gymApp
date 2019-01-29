@@ -15,15 +15,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class RegisterController
 {
 
-
     @Autowired
     private DataBase dataBase;
 
     @Autowired
     private RegistrationHelper registrationHelper;
 
-    @GetMapping("/rejestracja")
-    //TODO: change method's name
+    @GetMapping("/register")
     public String registerNewUserGet(Model model)
     {
         model.addAttribute("userForRegister", new User());
@@ -32,7 +30,7 @@ public class RegisterController
 
     }
 
-    @PostMapping("/rejestracja")
+    @PostMapping("/register")
     public String registerNewUserPost(@ModelAttribute() User userForRegister)
     {
 //        String url = this.registrationHelper.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
@@ -41,7 +39,6 @@ public class RegisterController
 
         return this.registrationHelper.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
     }
-
 
 }
 
