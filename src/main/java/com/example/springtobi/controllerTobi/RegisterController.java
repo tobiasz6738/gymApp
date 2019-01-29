@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller()
-public class RegisterController {
+public class RegisterController
+{
 
 
     @Autowired
@@ -34,17 +35,12 @@ public class RegisterController {
     @PostMapping("/rejestracja")
     public String registerNewUserPost(@ModelAttribute() User userForRegister)
     {
+//        String url = this.registrationHelper.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
+//              ...potrzebujemy jesli pracujemy na zmiennej
+//        return url;
 
-
-        String url = this.registrationHelper.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
-
-        return url;
-//           ==
-//          return this.registrationHelper.getUrlAndAddUserToDataBase(dataBase, userForRegister);
+        return this.registrationHelper.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
     }
-
-
-
 
 
 }
