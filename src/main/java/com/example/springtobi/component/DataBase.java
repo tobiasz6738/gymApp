@@ -17,7 +17,6 @@ public class DataBase
         this.usersList = new ArrayList<>();
     }
 
-
     public List<User> getUsersList()
     {
         return usersList;

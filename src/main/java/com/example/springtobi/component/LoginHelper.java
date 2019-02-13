@@ -10,11 +10,8 @@ public class LoginHelper
 {
     private boolean logInLogOut;
 
-
     public String checkLogInAndPasswordIsRegister(List<User> usersList, User userForCheck)
     {
-
-
 
             for (User user : usersList)
             {
@@ -26,6 +23,7 @@ public class LoginHelper
                         return "gym/registerTobi/test";
 
                     }
+
                     logInLogOut = true;
                 }
 
@@ -33,18 +31,6 @@ public class LoginHelper
 
         return "gym/registerTobi/test2";
     }
-
-
-
-//    public boolean isLogInLogOut()
-//    {
-//        return logInLogOut;
-//    }
-//
-//    public void setLogInLogOut(boolean logInLogOut)
-//    {
-//        this.logInLogOut = logInLogOut;
-//    }
 
 }
 
