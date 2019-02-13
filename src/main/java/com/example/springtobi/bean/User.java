@@ -5,10 +5,11 @@ public class User
 
     private String login;
     private String password;
+    private UserData userData;
 
     public User()
     {
-
+        this.userData =  new UserData();
     }
 
     public User(String login, String password)
@@ -17,12 +18,15 @@ public class User
         this.password = password;
     }
 
+
+
     public boolean isAdmin()
     {
 
         return this.password.equals("admin") && this.login.equals("admin");
 
     }
+
 
     public String getLogin()
     {
@@ -44,5 +48,14 @@ public class User
         this.password = password;
     }
 
+    public UserData getUserData()
+    {
+        return userData;
+    }
+
+    public void setUserData(UserData userData)
+    {
+        this.userData = userData;
+    }
 
 }

@@ -48,7 +48,7 @@ public class LoginHelperTest
     public void iExpectedTestBecauseEveryThinkIsCorrect()
     {
 
-        ////given
+       // given
         List<User> userList = new ArrayList<>();
         User userForAdd = new User("tobiasz","aq12");
         User userForAdd2 = new User("pawel","aq12");
@@ -60,13 +60,13 @@ public class LoginHelperTest
 
         User userForTheTest = new User("12345", "aq12w");
 
-        ////when
+       // when
 
         String result = this.underTest.checkLogInAndPasswordIsRegister(userList, userForTheTest);
 
-        ////then
+       // then
 
-        Assertions.assertThat(result).isEqualTo("gym/registerTobi/test");
+        Assertions.assertThat(result).isEqualTo("gym/registerTobi/test2");
 
     }
 

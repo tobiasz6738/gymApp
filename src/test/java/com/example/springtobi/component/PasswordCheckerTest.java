@@ -24,7 +24,7 @@ public class PasswordCheckerTest
 
         boolean methodsCheckerPasswordCheckPasswordIsTrueOrFalse = underTest.checkPassword(correctPassword);
 
-        Assertions.assertThat(methodsCheckerPasswordCheckPasswordIsTrueOrFalse).isEqualTo(true);
+        Assertions.assertThat(methodsCheckerPasswordCheckPasswordIsTrueOrFalse).isEqualTo(false);
     }
 
     @Test

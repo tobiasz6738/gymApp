@@ -62,7 +62,7 @@ public class AddDefaultUserTest
         this.underTest.addDefaultUsers(userList);
 
         //then
-        Assertions.assertThat(userList.get(0).getPassword()).isEqualTo("al9p");
+        Assertions.assertThat(userList.get(0).getPassword()).isEqualTo("aq12");
 
     }
 

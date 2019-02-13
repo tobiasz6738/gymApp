@@ -17,7 +17,7 @@ public class UserTest
     }
 
     @Test
-    public void shouldReturnFalseBaceuseIncorrectLogAndPass()
+    public void shouldReturnFalseBecauseIncorrectLogAndPass()
     {
  //      given
         underTest.setLogin("dupa");
@@ -35,7 +35,7 @@ public class UserTest
     {
         //      given
         underTest.setLogin("admin");
-//        underTest.setPassword("admin");
+        underTest.setPassword("admin");
 
         //      then
         boolean result = underTest.isAdmin();
@@ -43,9 +43,6 @@ public class UserTest
         //      when
         Assertions.assertThat(result).isEqualTo(true);
 
-
     }
-
-
 
 }

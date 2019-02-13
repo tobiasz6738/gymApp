@@ -9,6 +9,11 @@ public class UserData
     private int weight;
     private int high;
 
+    public UserData()
+    {
+
+    }
+
 
     public UserData(String name, String surname, int age, int weight, int high)
     {
@@ -19,7 +24,7 @@ public class UserData
         this.high = high;
     }
 
-    
+
     public String getName()
     {
         return name;
