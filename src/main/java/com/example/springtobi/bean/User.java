@@ -15,16 +15,14 @@ public class User
     {
         this.login = login;
         this.password = password;
-
     }
 
     public boolean isAdmin()
     {
 
-        return password.equals("admin") && this.login.equals("admin");
+        return this.password.equals("admin") && this.login.equals("admin");
 
     }
-
 
     public String getLogin()
     {

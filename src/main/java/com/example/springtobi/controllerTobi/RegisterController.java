@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -19,11 +18,12 @@ public class RegisterController
     private DataBase dataBase;
 
     @Autowired
-    private RegistrationHelper registrationHelper;
+    private RegistrationHelper helperRegister; // zmienna referencyjna jest typu jakiegos zawsze
 
     @GetMapping("/register")
     public String registerNewUserGet(Model model)
     {
+
         model.addAttribute("userForRegister", new User());
 
         return "gym/registerTobi/register";
@@ -31,13 +31,13 @@ public class RegisterController
     }
 
     @PostMapping("/register")
-    public String registerNewUserPost(@ModelAttribute() User userForRegister)
+    public String registerNewUserPost(User userForRegister)
     {
-//        String url = this.registrationHelper.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
+//        String url = this.helperRegister.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
 //              ...potrzebujemy jesli pracujemy na zmiennej
 //        return url;
 
-        return this.registrationHelper.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
+        return this.helperRegister.getUrlAndAddUserToDataBase(dataBase.getUsersList(), userForRegister);
     }
 
 }

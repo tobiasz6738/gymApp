@@ -18,7 +18,8 @@ public class RegistrationHelper
 
     public String getUrlAndAddUserToDataBase(List<User> allUser, User userForRegister)
     {
-
+        // WYWOLUJĘ metode ...nazwaMetody... NA OBIEKCIE wskazanym przez zmienna referencyjna ...nazwazZmiennej...
+        // NA OBIEKCIE wskazanym przez zmienna referencyjna ...nazwazZmiennej... WYWOLUJĘ metode ...nazwaMetody...
         if (this.loginChecker.checkLogin(getLogin(userForRegister)) && this.passwordChecker.checkPassword(getPassword(userForRegister)))
         {
             if (allUser.isEmpty())
@@ -57,6 +58,7 @@ public class RegistrationHelper
     }
 
     private String getLogin(User user)
+
     {
         return user.getLogin();
     }

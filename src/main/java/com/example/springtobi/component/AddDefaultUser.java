@@ -18,8 +18,13 @@ public class AddDefaultUser
         if (!trueFalse)
         {
             User user = new User("tobiasz", "aq12");
+            User user2 = new User("pawel", "aq12");
+            User user3 = new User("aq12", "aq12");
+
 
             listUsers.add(user);
+            listUsers.add(user2);
+            listUsers.add(user3);
 
             trueFalse = true;
         }

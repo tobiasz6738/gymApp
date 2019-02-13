@@ -8,20 +8,43 @@ import java.util.List;
 @Component
 public class LoginHelper
 {
+    private boolean logInLogOut;
+
 
     public String checkLogInAndPasswordIsRegister(List<User> usersList, User userForCheck)
     {
 
-        for (User user : usersList)
-        {
-            if (user.getLogin().equals(userForCheck.getLogin()) && user.getPassword().equals(userForCheck.getPassword()))
+
+
+            for (User user : usersList)
             {
-                return "gym/registerTobi/test";
+                if(!logInLogOut)
+                {
+                    if (user.getLogin().equals(userForCheck.getLogin()) && user.getPassword().equals(userForCheck.getPassword()))
+                    {
+
+                        return "gym/registerTobi/test";
+
+                    }
+                    logInLogOut = true;
+                }
+
             }
-        }
 
         return "gym/registerTobi/test2";
-
     }
+
+
+
+//    public boolean isLogInLogOut()
+//    {
+//        return logInLogOut;
+//    }
+//
+//    public void setLogInLogOut(boolean logInLogOut)
+//    {
+//        this.logInLogOut = logInLogOut;
+//    }
+
 }
 
