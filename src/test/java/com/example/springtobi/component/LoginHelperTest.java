@@ -70,4 +70,22 @@ public class LoginHelperTest
 
     }
 
+    @Test
+    public void test()
+    {
+        //given
+        List<User> userList = new ArrayList<>();
+        User user = new User("tobiasz", "aq12");
+
+        userList.add(user);
+        //when
+
+        String result = this.underTest.checkLogInAndPasswordIsRegister(userList, user);
+
+        //then
+
+        Assertions.assertThat(result).isEqualTo("gym/registerTobi/test");
+
+    }
+
 }
