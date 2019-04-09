@@ -31,6 +31,6 @@ public class LoginHelper
 
         return "gym/registerTobi/test2";
     }
-//
+
 }
 

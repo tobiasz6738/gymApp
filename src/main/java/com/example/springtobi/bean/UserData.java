@@ -14,7 +14,6 @@ public class UserData
 
     }
 
-
     public UserData(String name, String surname, int age, int weight, int high)
     {
         this.name = name;
